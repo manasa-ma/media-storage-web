@@ -20,17 +20,13 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="h-screen flex items-center justify-center bg-slate-50 p-6 font-sans">
+    <div className="h-screen flex items-center justify-center bg-slate-50 p-6">
       <div className="w-full max-w-md bg-white rounded-3xl shadow-xl p-10 border border-slate-200">
-        <div className="flex flex-col items-center mb-10">
-          <div className="bg-blue-600 p-4 rounded-2xl mb-4 shadow-lg shadow-blue-200 text-white"><HardDrive size={40} /></div>
-          <h1 className="text-3xl font-bold text-slate-800 tracking-tight">CloudDrive</h1>
-          <p className="text-slate-400 mt-2">Sign in to your account</p>
-        </div>
+        <div className="flex flex-col items-center mb-10 text-blue-600"><HardDrive size={60} /><h1 className="text-3xl font-bold mt-4 text-slate-800">CloudDrive</h1></div>
         <form onSubmit={handleLogin} className="space-y-4">
-          <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full p-4 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500 transition" />
-          <input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} className="w-full p-4 rounded-xl border border-slate-200 outline-none focus:ring-2 focus:ring-blue-500 transition" />
-          <button type="submit" disabled={loading} className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-100 flex justify-center">
+          <input type="email" placeholder="Email" required value={email} onChange={(e) => setEmail(e.target.value)} className="w-full p-4 rounded-xl border outline-none focus:ring-2 focus:ring-blue-500" />
+          <input type="password" placeholder="Password" required value={password} onChange={(e) => setPassword(e.target.value)} className="w-full p-4 rounded-xl border outline-none focus:ring-2 focus:ring-blue-500" />
+          <button type="submit" disabled={loading} className="w-full bg-blue-600 text-white py-4 rounded-xl font-bold flex justify-center">
             {loading ? <Loader2 className="animate-spin" /> : "Login"}
           </button>
         </form>
